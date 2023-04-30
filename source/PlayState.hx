@@ -20,7 +20,7 @@ class PlayState extends FlxState
 		var _rectangle:FssRectangle = new FssRectangle(300, 50);
 		_rectangle.y = 100;
 		_rectangle.x = 20;
-		_rectangle.angle = -30;
+		_rectangle.rotateTo(-30);
 		add(_rectangle);
 
 		var _line:FssLine = FssLine.fromTo(30, 200, 300, 230);

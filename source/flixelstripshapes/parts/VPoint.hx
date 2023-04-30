@@ -22,6 +22,14 @@ class VPoint
 		texture_y = _v;
 	}
 
+	public function rotate(_angle:Float):Void
+	{
+		var _p:FlxPoint = FlxPoint.weak(x, y);
+		_p.rotateByDegrees(_angle);
+		x = _p.x;
+		y = _p.y;
+	}
+
 	private function set_x(_x:Float):Float
 	{
 		if (parent != null)
