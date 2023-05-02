@@ -21,6 +21,11 @@ class FssShape extends FlxStrip
 		this.makeGraphic(1, 1, FlxColor.RED);
 	}
 
+	public function setColor(_color:FlxColor):Void
+	{
+		this.makeGraphic(1, 1, _color);
+	}
+
 	public function rotateTo(_angle:Float):Float
 	{
 		for (_p in points)
