@@ -11,18 +11,29 @@ class FssLine extends FssRectangle
 	public var thickness:Float = 0;
 	public var length:Float = 0;
 
+	private var fromPoint:FlxPoint = new FlxPoint();
+	private var toPoint:FlxPoint = new FlxPoint();
+
 	public static function fromTo(_x1:Float, _y1:Float, _x2:Float, _y2:Float, _thickness:Float = 2):FssLine
 	{
 		var _dx:Float = _x2 - _x1;
 		var _dy:Float = _y2 - _y1;
 		var _length:Float = Math.sqrt(_dx * _dx + _dy * _dy);
-		var _line:FssLine = new FssLine(_length, _thickness);
 		var _angle:Float = FlxPoint.weak(_dx, _dy).degrees;
 		// trace('Line angle:', _angle);
+		var _line:FssLine = new FssLine(_length, _thickness);
 		_line.rotateTo(_angle);
+		_line.fromPoint.set(_x1, _y1);
+		_line.toPoint.set(_x2, _y2);
 		_line.x = _x1;
 		_line.y = _y1;
 		return _line;
+	}
+
+	public function setFrom(_x:Float, _y:Float):Void
+	{
+		fromPoint.x = _x;
+		fromPoint.y = _y;
 	}
 
 	public function new(_length:Float, _thickness:Float = 2)
