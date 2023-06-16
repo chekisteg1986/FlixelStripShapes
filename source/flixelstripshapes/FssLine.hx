@@ -34,6 +34,25 @@ class FssLine extends FssRectangle
 	{
 		fromPoint.x = _x;
 		fromPoint.y = _y;
+
+		updateShape();
+	}
+
+	public function setTo(_x:Float, _y:Float):Void
+	{
+		toPoint.x = _x;
+		toPoint.y = _y;
+		updateShape();
+	}
+
+	public function updateShape():Void
+	{
+		var _dx:Float = toPoint.x - fromPoint.x;
+		var _dy:Float = toPoint.y - fromPoint.y;
+		var _length:Float = Math.sqrt(_dx * _dx + _dy * _dy);
+		var _angle:Float = FlxPoint.weak(_dx, _dy).degrees;
+		this.setRectangleWidth(_length);
+		rotateTo(_angle);
 	}
 
 	public function new(_length:Float, _thickness:Float = 2)
