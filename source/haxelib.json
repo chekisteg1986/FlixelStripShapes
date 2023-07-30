@@ -4,9 +4,9 @@
     "license": "MIT",
     "tags": ["haxeflixel","haxe","shapes","Geometrical"],
     "description": "Geometrical shapes based on FlxStrip class.",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "releasenote": "none.",
-    "contributors": ["chekisteg1986"],
+    "contributors": ["chekisteg"],
     "dependencies": {
     }
     
